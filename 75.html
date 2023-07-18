@@ -5,19 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LeetCode - 75 - mergeAlternately</title>
 </head>
-<script type="text/javascript">
-    <!-- mergeAlternately -->
-    var mergeAlternately = function (word1, word2){
-		let merged = '';
-		let word3 = new Array(Math.max(word1.length, word2.length));
-    for(let i=0; i <= word3.length; i++){
-      merged += word1[i] ? word1[i]: '';
-			merged += word2[i] ? word2[i]: '';
-    }
-		return merged;
-    }
-    console.log('mergeAlternately: ', mergeAlternately("ab", "gkd"));
-</script>
 <body>
+  <div id="answer"></div>
 </body>
+<script type="text/javascript">
+  <!-- mergeAlternately -->
+  var mergeAlternately = function (word1, word2){
+  let merged = '';
+  let word3 = new Array(Math.max(word1.length, word2.length));
+  for(let i=0; i <= word3.length; i++){
+    merged += word1[i] ? word1[i]: '';
+    merged += word2[i] ? word2[i]: '';
+  }
+  return merged;
+  }
+  document.getElementById("answer").innerHTML = mergeAlternately("ab", "gkd");
+</script>
 </html>
