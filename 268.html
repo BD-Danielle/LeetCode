@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeetCode - 268 - missingNumber</title>
+</head>
+<body>
+    <div id="answer"></div>
+</body>
+<script type="text/javascript">
+	<!-- missingNumber -->
+	/**
+	* @param {number[]} nums
+	* @return {number}
+	*/
+	var missingNumber = function(nums) {
+		const n = nums.length;
+		const expectedSum = (n * (n + 1)) / 2;
+		const actualSum = nums.reduce((sum, num) => sum + num, 0);
+		return expectedSum - actualSum;
+	};
+	console.log('missingNumber([3, 0, 1]): ', missingNumber([3, 0, 1]));
+	document.getElementById("answer").innerHTML = missingNumber([3, 0, 1]);
+</script>
+</html>

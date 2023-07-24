@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeetCode - 137 - singleNumber</title>
+</head>
+<body>
+    <div id="answer"></div>
+</body>
+<script type="text/javascript">
+	<!-- singleNumber -->
+	/**
+	* @param {number[]} nums
+	* @return {number}
+	*/
+	var singleNumber = function(nums) {
+		let ones = 0;
+		let twos = 0;
+	
+		for (const num of nums) {
+		ones = (ones ^ num) & ~twos;
+		twos = (twos ^ num) & ~ones;
+		}
+	
+		return ones;
+	
+	};
+	console.log('singleNumber([0,1,0,1,0,1,99]): ', singleNumber([0,1,0,1,0,1,99]));
+	document.getElementById("answer").innerHTML = singleNumber([0,1,0,1,0,1,99]);
+</script>
+</html>
